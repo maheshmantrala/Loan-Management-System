@@ -1,0 +1,5 @@
+# Ignore Eclipse and Spring Tool Suite metadata
+.metadata/
+*.classpath
+*.project
+*.settings/

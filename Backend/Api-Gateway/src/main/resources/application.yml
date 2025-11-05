@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+        - id: customer-service
+          uri: lb://LMS_CustomerService
+          predicates:
+            - Path=/api/customers/**
+        - id: document-service
+          uri: lb://document-service
+          predicates:
+            - Path=/documents/**
+        - id: origination-service
+          uri: lb://origination-service
+          predicates:
+            - Path=/origination/**
+        - id: servicing-service
+          uri: lb://servicing-service
+          predicates:
+            - Path=/servicing/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notifications/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret: WIPRO_SECRET_KEY_123WIPRO_SECRET_KEY_123

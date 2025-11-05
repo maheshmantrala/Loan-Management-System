@@ -1,0 +1,29 @@
+package com.wipro.poc.DTO;
+
+import java.time.OffsetDateTime;
+
+public class NotificationDTO {
+  private Long id;
+  private String channel;
+  private String toAddress;
+  private String subject;
+  private String body;
+  private String status;
+  private OffsetDateTime createdAt;
+
+  // getters/setters
+  public Long getId() { return id; }
+  public void setId(Long id) { this.id = id; }
+  public String getChannel() { return channel; }
+  public void setChannel(String channel) { this.channel = channel; }
+  public String getToAddress() { return toAddress; }
+  public void setToAddress(String toAddress) { this.toAddress = toAddress; }
+  public String getSubject() { return subject; }
+  public void setSubject(String subject) { this.subject = subject; }
+  public String getBody() { return body; }
+  public void setBody(String body) { this.body = body; }
+  public String getStatus() { return status; }
+  public void setStatus(String status) { this.status = status; }
+  public OffsetDateTime getCreatedAt() { return createdAt; }
+  public void setCreatedAt(OffsetDateTime createdAt) { this.createdAt = createdAt; }
+}
